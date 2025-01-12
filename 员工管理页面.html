@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能学习辅助系统</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* 顶部导航栏 */
+    .header {
+      background-color: #c0c0c0;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    /* 搜索区域 */
+    .search-bar {
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-bar input, .search-bar select {
+      padding: 8px;
+      font-size: 16px;
+      width: 200px;
+    }
+
+    .search-bar button {
+      padding: 8px 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .search-bar button:hover {
+      background-color: #0056b3;
+    }
+
+    /* 表格样式 */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: white;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    /* 操作按钮 */
+    .edit-btn, .delete-btn {
+      color: orange;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .delete-btn {
+      color: red;
+    }
+
+    /* 底部版权区域 */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f2f2f2;
+      font-size: 14px;
+      color: #666;
+    }
+    /* 表格展示区样式 */
+.table-container {
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: center;
+}
+
+table thead {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 5px;
+}
+
+.delete-btn:hover {
+  background-color: #a71d2a;
+}
+
+  </style>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <div class="header">
+    tlias 智能学习辅助系统
+  </div>
+
+  <!-- 搜索栏 -->
+ <!-- 搜索表单区域 -->
+<form class="search-bar" action="/search" method="GET">
+    <label>
+      <input type="text" name="name" placeholder="姓名">
+    </label>
+    <label>
+      <select name="gender">
+        <option value="">性别</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+      </select>
+    </label>
+    <label>
+      <select name="position">
+        <option value="">职位</option>
+        <option value="班主任">班主任</option>
+        <option value="讲师">讲师</option>
+        <option value="学工主管">学工主管</option>
+        <option value="教研主管">教研主管</option>
+        <option value="咨询师">咨询师</option>
+      </select>
+    </label>
+    <div class="button-group">
+      <button type="submit" class="search-btn">查询</button>
+      <button type="reset" class="reset-btn">清空</button>
+    </div>
+  </form>
+  
+
+  <!-- 表格 -->
+  <!-- 表格展示区 -->
+<div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>性别</th>
+          <th>头像</th>
+          <th>职位</th>
+          <th>入职日期</th>
+          <th>最后操作时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 数据模拟 -->
+        <tr>
+          <td>令狐冲</td>
+          <td>男</td>
+          <td><img src="avatar-placeholder.png" alt="头像" class="avatar"></td>
+          <td>讲师</td>
+          <td>2015-07-15</td>
+          <td>2025-01-10 14:32:00</td>
+          <td>
+            <button class="edit-btn">编辑</button>
+            <button class="delete-btn">删除</button>
+          </td>
+        </tr>
+        <tr>
+          <td>任盈盈</td>
+          <td>女</td>
+          <td><img src="avatar-placeholder.png" alt="头像" class="avatar"></td>
+          <td>班主任</td>
+          <td>2018-09-20</td>
+          <td>2025-01-08 10:15:00</td>
+          <td>
+            <button class="edit-btn">编辑</button>
+            <button class="delete-btn">删除</button>
+          </td>
+        </tr>
+        <tr>
+          <td>岳不群</td>
+          <td>男</td>
+          <td><img src="avatar-placeholder.png" alt="头像" class="avatar"></td>
+          <td>学工主管</td>
+          <td>2012-03-05</td>
+          <td>2025-01-05 18:45:00</td>
+          <td>
+            <button class="edit-btn">编辑</button>
+            <button class="delete-btn">删除</button>
+          </td>
+        </tr>
+        <tr>
+          <td>东方不败</td>
+          <td>男</td>
+          <td><img src="avatar-placeholder.png" alt="头像" class="avatar"></td>
+          <td>咨询师</td>
+          <td>2020-06-01</td>
+          <td>2025-01-11 12:00:00</td>
+          <td>
+            <button class="edit-btn">编辑</button>
+            <button class="delete-btn">删除</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+  <!-- 底部版权 -->
+  <div class="footer">
+    江苏传智播客教育科技股份有限公司 版权所有Copyright 2006-2024 All Rights Reserved
+  </div>
+</body>
+</html>

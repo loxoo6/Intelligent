@@ -219,8 +219,9 @@
           }
         },
         methods: {
-          search() {
-            console.log(this.searchEmp)
+          async search() {
+            const result= await axios.get(`https://web-server.itheima.net/emps/list?name=${this.searchEmp.name}&gender=${this.searchEmp.gender}&job=${this.searchEmp.job}`);
+              this.searchEmp=result.data.data
           },
           clear() {
             this.searchEmp = {
@@ -228,7 +229,12 @@
               gender: '',
               job: ''
             }
+          this.search();
+
           }
+        },
+        mounted() {
+          this.search();
         }
       }).mount('#container')
     </script>

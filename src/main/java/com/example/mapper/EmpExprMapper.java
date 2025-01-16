@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface EmpExprMapper {
     public void insertExpr(List<EmpExpr> exprList);
+    void deleteByEmpIds(List<Integer> empIds);
 }

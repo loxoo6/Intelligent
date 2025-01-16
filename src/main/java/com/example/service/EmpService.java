@@ -5,8 +5,12 @@ import com.example.pojo.EmpQueryParam;
 import com.example.pojo.PageResult;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public interface EmpService {
     PageResult page(EmpQueryParam empQueryParam);
     void save(Emp emp);
+    void deleteByIds(List<Integer> ids);
+    Emp getInfo(Integer id);
+    void update(Emp emp);
 }

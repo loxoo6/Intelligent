@@ -67,4 +67,10 @@ public class EmpController {
         List<Map> genderList = reportService.getEmpGenderData();
         return Result.success(genderList);
     }
+    @GetMapping("/list")
+    public Result getAllEmp(){
+        List<Emp> empList=empService.getAllEmp();
+        return Result.success(empList);
+    }
+
 }
